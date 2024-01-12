@@ -1,23 +1,33 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld, { type RoutesModel } from './components/HelloWorld.vue'
+const message = "Bem vindo!"
+const secondaryMessage = "Upload e visualização dos dados de planilhas de assinantes"
+const routes: RoutesModel[] = [
+  {
+    label: "Upload das planilhas",
+    link: "upload"
+  },
+  {
+    label: "Grafico MMR",
+    link: "chart-mmr"
+  },
+  {
+    label: "Grafico Churn Rate",
+    link: "chart-churnrate"
+  }
+]
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="225" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <HelloWorld :msg="message" :secondaryMessage="secondaryMessage" :routes="routes" />
     </div>
   </header>
-
-  <RouterView />
+  <RouterView/>
 </template>
 
 <style scoped>
