@@ -21,20 +21,20 @@ services:
     restart: unless-stopped
     depends_on:
       - mongodb
-  # frontend:
-  #   container_name: copybase-frontend
-  #   image: copybase-frontend
-  #   build:
-  #     dockerfile: ./copybase-frontend/Dockerfile
-  #     context: .
-  #   ports:
-  #     - 3001:3001
-  #   networks:
-  #     - node-webapp-network
-  #   volumes:
-  #     - .:/usr/src/app
-  #     - /usr/src/app/node_modules
-  #   restart: unless-stopped
+  frontend:
+    container_name: copybase-frontend
+    image: copybase-frontend
+    build:
+      dockerfile: ./copybase-frontend/Dockerfile
+      context: .
+    ports:
+      - 3001:3001
+    networks:
+      - node-webapp-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
   mongodb:
     container_name: mongodb
     image: mongo:6.0
