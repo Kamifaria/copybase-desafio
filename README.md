@@ -24,15 +24,15 @@ docker-compose up -d
 
 Para usar Desafio Copybase, siga estas etapas:
 
-#Carregue a planilha ao fazer o upload
+### Carregue a planilha ao fazer o upload
 
 <p align="center"><img width="80%"  src="./assets/upload.png" /></a></p>
 
-#Visualize o gráfico de Churn rate
+### Visualize o gráfico de Churn rate
 
 <p align="center"><img width="80%"  src="./assets/churn-rate.png" /></a></p>
 
-#Visualize o gráfico de MMR
+### Visualize o gráfico de MMR
 
 <p align="center"><img width="80%"  src="./assets/mmr.png" /></a></p>
 
