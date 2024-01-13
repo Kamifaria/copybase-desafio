@@ -1,0 +1,51 @@
+version: "3"
+services:
+  backend:
+    container_name: copybase-backend
+    image: copybase-backend
+    build:
+      dockerfile: ./copybase-backend/Dockerfile
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      - DB_USERNAME=app_user
+      - DB_PASSWORD=app_password
+      - DB_NAME=admin
+      - DB_HOST=mongodb
+    networks:
+      - node-webapp-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+  frontend:
+    container_name: copybase-frontend
+    image: copybase-frontend
+    build:
+      dockerfile: ./copybase-frontend/Dockerfile
+      context: .
+    ports:
+      - 3001:3001
+    networks:
+      - node-webapp-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+  mongodb:
+    container_name: mongodb
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=app_user
+      - MONGO_INITDB_ROOT_PASSWORD=app_password
+      - MONGO_INITDB_DATABASE=admin
+    networks:
+      - node-webapp-network
+networks:
+  node-webapp-network:
+    driver: bridge
