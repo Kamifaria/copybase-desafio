@@ -1,6 +1,6 @@
 # Desafio Copy Base
 
-<img src="assets/home.png" alt="Home Page example">
+<img src="assets/logo.svg" alt="Home Page example">
 
 ## 💻 Pré-requisitos
 
@@ -41,8 +41,8 @@ Para usar Desafio Copybase, siga estas etapas:
 <table>
   <tr>
     <td align="center">
-      <a href="#" title="defina o titulo do link">
-        <img src="https://avatars.githubusercontent.com/u/91440228?v=4" width="100px;" alt="Foto do Kamila de Paula Faria Afonso no GitHub"/><br>
+      <a href="#" title="Kamila de Paula Faria Afonso no GitHub">
+        <img src="https://avatars.githubusercontent.com/u/91440228?v=4" width="100px;"/><br>
         <sub>
           <b>Kamila de Paula Faria Afonso</b>
         </sub>
