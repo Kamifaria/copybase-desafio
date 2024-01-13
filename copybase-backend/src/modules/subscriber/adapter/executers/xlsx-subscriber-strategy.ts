@@ -50,7 +50,7 @@ export class XlsxSubsCriberStrategy implements SubscriberFactoryInterface {
                 const valor = row.getCell(8).value
                 const proximoCiclo = row.getCell(9).value?.toString()
                 const idAssinante = row.getCell(10).value.toString()
-
+                
                 const subscriber = new CreateSubscriberDto()
 
                 subscriber.periodicidade = Periodicidade[periodicidade.toUpperCase()]
